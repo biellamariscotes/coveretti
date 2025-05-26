@@ -6,7 +6,7 @@ export default function NavItem({
   onClick,
 }: NavItemProps) {
   return (
-    <div className="col-span-2 flex items-center justify-center uppercase font-bold">
+    <div className="col-span-1 flex items-center justify-center uppercase font-bold">
       <button
         onClick={onClick}
         className={`border-b-4 transition-colors duration-200 cursor-pointer uppercase ${
