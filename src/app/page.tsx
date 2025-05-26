@@ -1,3 +1,7 @@
 export default function Home() {
-  return <section>Child</section>;
+  return (
+    <div>
+      <h1>Generator Page</h1>
+    </div>
+  );
 }
