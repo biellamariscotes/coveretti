@@ -8,6 +8,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
       variant = "primary",
+      size = "medium",
       icon: Icon,
       iconPosition = "left",
       children,
@@ -25,6 +26,12 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       primary: "bg-primary-600 hover:bg-accent text-white",
       secondary: "bg-gray-100 hover:bg-gray-200 text-gray-900",
       danger: "bg-red-600 hover:bg-red-700 text-white",
+    };
+
+    const sizes = {
+      small: "px-3 py-1 text-sm tracking-wide",
+      medium: "px-4 py-2 text-base tracking-wide",
+      large: "px-8 py-4 text-lg font-bold tracking-wide",
     };
 
     // Handle different action types
@@ -89,8 +96,9 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           target={action.target}
           rel={action.target === "_blank" ? "noopener noreferrer" : undefined}
           className={cn(
-            "inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed no-underline",
+            "inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed no-underline",
             variants[variant],
+            sizes[size],
             className
           )}
         >
@@ -106,7 +114,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       <button
         ref={ref}
         className={cn(
-          "inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed",
+          "inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed",
           variants[variant],
           className
         )}
