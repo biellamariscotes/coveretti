@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import { Onest } from "next/font/google";
+import { Onest, Playwrite_US_Trad } from "next/font/google";
 import "../styles/globals.css";
 
 const onest = Onest({
@@ -9,6 +9,12 @@ const onest = Onest({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   display: "swap",
   variable: "--font-onest",
+});
+
+const playwrite = Playwrite_US_Trad({
+  weight: ["100", "200", "300", "400"],
+  display: "swap",
+  variable: "--font-playwrite",
 });
 
 export const metadata: Metadata = {
@@ -26,7 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${onest.variable} antialiased`}>
+      <body className={`${onest.variable} ${playwrite.variable} antialiased`}>
         <Header></Header>
         {children}
         <Footer></Footer>

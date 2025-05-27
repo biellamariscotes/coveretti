@@ -3,6 +3,7 @@ import { LucideIcon } from "lucide-react";
 export interface BaseButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary" | "danger";
+  size?: "small" | "medium" | "large";
   icon?: LucideIcon;
   iconPosition?: "left" | "right";
 }

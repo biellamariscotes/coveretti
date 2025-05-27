@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "../styles/palette/colors.css";
 
 :root {
   --background: #fbfbfb;
@@ -51,4 +52,8 @@ body {
 
 .border {
   border: 2px solid red;
+}
+
+.brand-font {
+  font-family: var(--font-playwrite);
 }
