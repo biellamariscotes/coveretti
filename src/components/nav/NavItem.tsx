@@ -1,22 +1,26 @@
+// components/nav/NavItem.tsx
+import Link from "next/link";
 import { NavItemProps } from "@/interfaces/nav-item";
+import { cn } from "@/utils/classnames";
 
 export default function NavItem({
   children,
   isActive = false,
-  onClick,
+  href,
 }: NavItemProps) {
   return (
     <div className="col-span-1 flex items-center justify-center uppercase font-bold">
-      <button
-        onClick={onClick}
-        className={`tracking-wide border-b-4 transition-colors duration-200 cursor-pointer uppercase ${
+      <Link
+        href={href}
+        className={cn(
+          "tracking-wide border-b-4 transition-colors duration-200 cursor-pointer uppercase",
           isActive
             ? "border-[var(--color-primary)]"
             : "border-transparent hover:border-gray-400"
-        }`}
+        )}
       >
         {children}
-      </button>
+      </Link>
     </div>
   );
 }

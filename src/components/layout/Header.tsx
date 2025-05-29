@@ -1,27 +1,27 @@
 // Header.tsx
 "use client";
 import Image from "next/image";
-import { useState } from "react";
-import NavItem from "../nav/NavItem";
+import { usePathname } from "next/navigation";
+import NavItem from "@/components/nav/NavItem";
+import { getActiveNav } from "@/utils/nav";
 
 export default function Header() {
-  const [activeNav, setActiveNav] = useState<string>("get-started");
+  const pathname = usePathname();
+  const activeNav = getActiveNav(pathname);
+
+  console.log("Current route:", pathname);
+  console.log("Active nav:", activeNav);
+  console.log("Home is active:", activeNav === "home");
 
   return (
     <section>
       <div className="grid grid-cols-12 pt-6">
         <div className="col-start-3 col-span-8 grid grid-cols-5 items-center">
-          <NavItem
-            isActive={activeNav === "home"}
-            onClick={() => setActiveNav("home")}
-          >
+          <NavItem href="/" isActive={activeNav === "home"}>
             Home
           </NavItem>
 
-          <NavItem
-            isActive={activeNav === "contact"}
-            onClick={() => setActiveNav("contact")}
-          >
+          <NavItem href="/contact" isActive={activeNav === "contact"}>
             Contact
           </NavItem>
 
@@ -35,18 +35,15 @@ export default function Header() {
             />
           </div>
 
-          <NavItem
-            isActive={activeNav === "about"}
-            onClick={() => setActiveNav("about")}
-          >
+          <NavItem href="/about" isActive={activeNav === "about"}>
             About
           </NavItem>
 
           <NavItem
-            isActive={activeNav === "get-started"}
-            onClick={() => setActiveNav("get-started")}
+            href="/getting-started"
+            isActive={activeNav === "getting-started"}
           >
-            Get Started
+            Getting Started
           </NavItem>
         </div>
       </div>

@@ -29,7 +29,7 @@ export default function Home() {
           }}
           size="large"
         >
-          Start Documenting
+          Start Enhancing
         </Button>
       </div>
     </div>

@@ -1,7 +1,5 @@
-import { ReactNode } from "react";
-
 export interface NavItemProps {
-  children: ReactNode;
+  children: React.ReactNode;
   isActive?: boolean;
-  onClick?: () => void;
+  href: string;
 }
