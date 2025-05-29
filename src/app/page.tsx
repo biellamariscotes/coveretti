@@ -22,7 +22,7 @@ export default function Home() {
       ease: "power2.out",
       onComplete: () => {
         gsap.to(pathRef.current, {
-          stroke: "#555",
+          stroke: "#A4A4A4",
           duration: 5,
           yoyo: true,
           repeat: -1,
@@ -55,7 +55,7 @@ export default function Home() {
             width="507.88"
             height="121.74"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           >
             <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feColorMatrix
@@ -91,9 +91,9 @@ export default function Home() {
             y2="61"
             gradientUnits="userSpaceOnUse"
           >
-            <stop offset="0.0625" stop-color="#CC80DB" />
-            <stop offset="0.3125" stop-color="#DABFFF" />
-            <stop offset="0.951923" stop-color="#FF85AB" />
+            <stop offset="0.0625" stopColor="#CC80DB" />
+            <stop offset="0.3125" stopColor="#DABFFF" />
+            <stop offset="0.951923" stopColor="#FF85AB" />
           </linearGradient>
         </defs>
       </svg>
