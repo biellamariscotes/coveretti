@@ -10,10 +10,12 @@ export default function Home() {
   const pathRef = useRef<SVGPathElement>(null);
 
   useEffect(() => {
+    // Before
     gsap.set(pathRef.current, {
       clipPath: "inset(0 100% 0 0)",
     });
 
+    // State
     gsap.to(pathRef.current, {
       clipPath: "inset(0 0% 0 0)",
       duration: 4,
