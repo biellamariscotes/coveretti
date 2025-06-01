@@ -172,7 +172,7 @@ export default function Home() {
           variant="primary"
           action={{
             type: "link",
-            href: "/dashboard",
+            href: "/enhancer",
           }}
           size="large"
         >
